@@ -1,0 +1,48 @@
+<h3>Configure your first Host</h3>
+<div>
+    <p>Please configure your Backup Source.</p >
+    <p>You can specify either ESXi(or vCenter) or Hyper-V(or SCVMM) as your first host device.</p >
+    <div class="hypervisor">
+        <span>Hypervisor:</span>
+        <div class="item clearfix">
+            <label>
+                <input type="radio" [(ngModel)]="setting.firstHost.hypervisor" name="setting.firstHost.hypervisor" value="Hyper-V" />
+                Microsoft Hyper-V
+            </label>
+            <label>
+                <input type="radio" [(ngModel)]="setting.firstHost.hypervisor" name="setting.firstHost.hypervisor" value="Active Directory" />
+                Lookup Hosts on Active Directory
+            </label>
+            <label>
+                <input type="radio" [(ngModel)]="setting.firstHost.hypervisor" name="setting.firstHost.hypervisor" value="VMware ESXi" />
+                VMware ESXi
+            </label>
+            <label>
+                <input type="radio" [(ngModel)]="setting.firstHost.hypervisor" name="setting.firstHost.hypervisor" value="VMware vCenter"/>
+                Lookup Hosts on VMware vCenter 
+            </label>
+        </div>
+    </div>
+    <div class="form-set">
+        <div class="item">
+            <input type="text" [(ngModel)]="setting.firstHost.hostName" class="hostname" placeholder="IP Address/Hostname" />
+            <input [(ngModel)]="setting.firstHost.port" type="text" class="port" />
+            <span class="porttext">port:</span>
+        </div>
+        <div class="item">
+            <input [(ngModel)]="setting.firstHost.userName" type="text" placeholder="Username" />
+        </div>
+        <div class="item">
+            <input [(ngModel)]="setting.firstHost.password"  type="text" placeholder="Password" />
+        </div>
+        <a  (click)="OnTest()" class="text">Test Connection</a >
+    </div>
+</div>
+<div class="page">
+    <div class="step">Step 2 of 5</div>
+    <div class="setup">
+        <a [routerLink]="'/step1'" class="back">back</a >
+        <a [routerLink]="'/step3'" class="next">Next</a >
+        <a (click)="OnCancel()" class="cancel">Cancel</a >
+    </div>
+</div>

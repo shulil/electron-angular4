@@ -1,0 +1,29 @@
+<h3>Initial Configuration Comleted</h3>
+<div>
+    <p>Initial Configuration has succeeded!</p >
+    <p>You have selected <span class="set-text">{{setting.firstHost.hypervisor}}</span> host <span class="set-text">{{setting.firstStorageDes.hostName}} </span>as the backup source, and have selected <span class="set-text">{{setting.firstStorageDes.location}}</span> as your default storage device.</p >
+    <p>Please move on to the "Backup Configuration" to associate your Backup Sources to Schedule timing. Each Backup Source can be associated with one or more Schedule timing(snapshots are taken immediately on scheduled hopurs), and the system will figure out the most optimum way to comlete the backup.</p >
+    <p>We have created two sample Schedules designed for Week Day and Week End Backups.</p >
+    <div class="clearfix showinfo">
+        <div class="info-left">
+        </div>
+        <div class="info-right">
+            <div class="item1">
+                <h4>Weekday Backup</h4>
+                <p>Mon-Fri, 9:00-21:00 Every 3 hours</p >
+            </div>
+            <div class="item2">
+                <h4>Weekday Backup</h4>
+                <p>Saturday, 9:00-21:00 Every 6 hours</p >
+                <p>Sunday, 12:00 Noon Full Backup</p >
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page">
+    <div class="step">Step 5 of 5</div>
+    <div class="setup">
+        <a (click)="Ondone()" class="done">Done</a >
+        <a (click)="OnCancel()" class="cancel">Cancel</a >
+    </div>
+</div>

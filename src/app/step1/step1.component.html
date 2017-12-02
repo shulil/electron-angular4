@@ -1,0 +1,28 @@
+<h3>Welcome to vmGuardian 4</h3>
+<p class="t-center">In order to begin using the vmGuardian, you will have to configure following items.</p>
+<div class="item">
+    <span>1</span>
+    <h4>backup Source</h4>
+    <p>vmGuardian can backup VMware ESXi servers and Microsoft Hyper-V Servers. You must configure at least one host as backup source before you can proceed with backups</p >
+</div>
+<div class="item">
+    <span>2</span>
+    <h4>Destination</h4>
+    <p>vmGuardian can store backup to Direct Attached Storage(connected locally) or Network Attached Storage(either via CIFS/Samba or NFS). You must configure at least one destination storage device before you can proceed with backups.</p >
+</div>
+<div>
+    <p>This destination storage device will be your default storage device. All Machines detected in Step 1 will be temporarily bound to this storage device. You can change association between Virtual Machine and Storage device later in the "Storage" tab.</p >
+    <p>You can register additional Backup Sources and Destination Storage, perform manual backup or scheduled backup after completing this wizard.</p >
+    <p>Optionally, Please configure the following to identify your installation:</p >
+</div>
+<div>
+    <input type="text" [(ngModel)]="setting.serverName" placeholder="Server Name" />
+    <input type="text" [(ngModel)]="setting.locationIdentifier" placeholder="Location Identifier" />
+</div>
+<div class="page">
+    <div class="step">Step 1 of 5</div>
+    <div class="setup">
+        <a (click)="next()" class="next">Next</a >
+        <a (click)="OnCancel()" class="cancel">Cancel</a >
+    </div>
+</div>

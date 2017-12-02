@@ -1,0 +1,42 @@
+<h3>Configure your first storage destination</h3>
+<div>
+    <p>Please configure your first Destination Storage.</p >
+    <p>This will be the default storage device for the Virtual Machines detected in the previous steo. You can optionally choose whether you would like to use this device as default storage device for any newly detected virtual machines.</p >
+    <div class="form-set">
+        <div class="item">
+            <label>
+                <input type="radio" [(ngModel)]="setting.firstStorageDes.type" name="setting.firstStorageDes.type" value="Direct Attached or Windows Shared Volumnes" />
+                Direct Attached or Windows Shared Volumes
+            </label>
+            <div class="file">
+                <label for="file" class="file-set">
+                    <span></span>
+                    <i>...</i>
+                </label>
+            </div>
+        </div>    
+        <div class="item">    
+            <input style="display:none;" type="file" id="file" [(ngModel)]="setting.firstStorageDes.location" placeholder="Please browse location…" />
+        </div>
+        <div>
+            <label> 
+                <input type="radio" [(ngModel)]="setting.firstStorageDes.type" name="setting.firstStorageDes.type" value="NFS Share" />
+                NFS Share
+            </label>
+            <input type="text" [(ngModel)]="setting.firstStorageDes.hostName" placeholder="IP Address/Host name" />
+            <input type="text" [(ngModel)]="setting.firstStorageDes.NFSShare" placeholder="NFS Share" />
+        </div>
+    </div>
+    <label>
+        <input type="checkbox" [(ngModel)]="setting.firstStorageDes.isdefault"  />
+        Use this as the default storage devce for any newly detected Virtual Machines.
+    </label>
+</div>
+<div class="page">
+    <div class="step">Step 3 of 5</div>
+    <div class="setup">
+        <a [routerLink]="'/step2'" class="back">back</a >
+        <a [routerLink]="'/step4'" class="next">Next</a >
+        <a (click)="OnCancel()" class="cancel">Cancel</a >
+    </div>
+</div>

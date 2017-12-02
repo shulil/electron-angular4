@@ -1,0 +1,48 @@
+<h3>Configure poeration modes</h3>
+<div>
+    <p>vmGuardian can backup Virtual Machines either in Sequential Backup or Parallel Backup modes.</p >
+    <p>Would you like to:</p >
+    <div class="form-set">
+        <div class="item">
+            <label>
+            <input type="radio"  [(ngModel)]="setting.operationModes.type" name="setting.operationModes.type" value="Sequential Back" />
+            Use Sequential Back for optimized deduplication performance.
+            </label>
+            <p>Sequential Backup groups as many Virtual Machines as possible and processes in Sequential Order, each subsequent backup sharing same deduplication database. Sequential backup produces one image file(containing all grouped VMs) per backup.</p >
+        </div>
+        <div class="item">
+            <label>
+            <input type="radio" [(ngModel)]="setting.operationModes.type" name="setting.operationModes.type" value="Parallelized Back" />
+            Use Parallelized Back for optimized speed.
+            </label>
+            <p>Parallel Backup will instead backup as many Virtual Machines as possible in simultaneously, maximizing the bandwidth offered by the source, destination, and the network. Parallel backup will create separate image files per VM , and is more replication friendly.</p >
+        </div>
+    </div>
+    <div class="form-set2">
+        <p>vmGuardian support antomatic throttling by resource usage. Would you like to:</p >
+        <div class="item">
+            <label>
+                <input type="checkbox" [(ngModel)]="setting.operationModes.Storagedestination.check"/>
+                Restrict simultaneous access to Storage destination to
+            </label>
+            <input type="number" [(ngModel)]="setting.operationModes.Storagedestination.streams" name="setting.operationModes.Storagedestination.streams"/>streams.
+        </div>
+        <div class="item">
+            <label>
+                <input type="checkbox" [(ngModel)]="setting.operationModes.hostdatastore.check" />
+                Restrict simultaneous access from Host datastore to
+            </label>
+            <input type="number" [(ngModel)]="setting.operationModes.hostdatastore.streams" name="setting.operationModes.hostdatastore.streams"/>streams.
+        </div>
+    </div>
+</div>
+<div>
+    <div class="page">
+        <div class="step">Step 4 of 5</div>
+        <div class="setup">
+            <a [routerLink]="'/step3'" class="back">back</a >
+            <a [routerLink]="'/step5'" class="next">Next</a >
+            <a (click)="OnCancel()" class="cancel">Cancel</a >
+        </div>
+    </div>
+</div>    
