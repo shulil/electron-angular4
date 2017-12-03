@@ -9,14 +9,14 @@
                 Direct Attached or Windows Shared Volumes
             </label>
             <div class="file">
-                <label for="file" class="file-set">
-                    <span></span>
+                <label for="file"   class="file-set">
+                    <span>{{file}}</span>
                     <i>...</i>
                 </label>
             </div>
         </div>    
         <div class="item">    
-            <input style="display:none;" type="file" id="file" [(ngModel)]="setting.firstStorageDes.location" placeholder="Please browse location…" />
+            <input  type="file" id="file"  (change)="onChange($event)" webkitdirectory placeholder="Please browse location…" />
         </div>
         <div>
             <label> 

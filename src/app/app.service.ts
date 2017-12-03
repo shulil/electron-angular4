@@ -13,7 +13,9 @@ export class AppService {
             passoerd: "",
         },
         firstStorageDes: {
-            type: ""
+            type: "",
+            location:""
+
         },
         operationModes: {
             type: "",

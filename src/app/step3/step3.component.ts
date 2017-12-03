@@ -13,6 +13,7 @@ export class Step3Component {
   }
   
   setting = this.appService.getData();
+  file = 'xxx';
   OnCancel() {
 
     //向主进程通信
@@ -20,5 +21,10 @@ export class Step3Component {
   }
   next() {
     this.router.navigate(['/step4']);
+  }
+  onChange(file) {
+    console.log(file);
+    this.setting['firstStorageDes']['location'] =file['target']['files'][0]['path'];
+    this.file = file['target']['files'][0]['path'];
   }
 }
